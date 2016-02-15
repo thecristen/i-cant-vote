@@ -1,0 +1,54 @@
+<h1>New Story</h1>
+
+<%= form_for :story , url: stories_path do |f| %>
+  <% if @story.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@story.errors.count, "error") %> prohibited
+        this story from being saved:
+      </h2>
+      <ul>
+        <% @story.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </p>
+
+  <p>
+    <%= f.label :body %>
+    <%= f.text_area :body %>
+  </p>
+
+  <p>
+    <%= f.label :author %>
+    <%= f.text_field :author %>
+  </p>
+
+  <p>
+    <%= f.label :state %>
+    <%= f.select(:state) do %>
+      <% CS.states(:us).each do |state_key, state_name| %>
+        <%= content_tag(:option, state_name, value: state_key) %>
+      <% end %>
+    <% end %>
+
+  </p>
+
+  <p>
+    <%= f.label :city %> (Select State)
+    <%= f.select(:city) do %>
+    <% end %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
+<%= link_to 'All stories', stories_path %>

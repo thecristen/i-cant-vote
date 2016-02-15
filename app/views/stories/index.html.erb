@@ -1,0 +1,23 @@
+<h1>Listing stories</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Author</th>
+    <th>Text</th>
+    <th>Date</th>
+    <th>Link</th>
+  </tr>
+
+  <% @stories.each do |story| %>
+    <tr>
+      <td><%= story.title %></td>
+      <td><%= story.author %></td>
+      <td><%= story.body %></td>
+      <td><%= story.created_at %></td>
+      <td><%= link_to 'Show', story_path(story) %></td>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to 'All stories', stories_path %>
