@@ -1,24 +1,11 @@
-## README
+This is an app I'm working on.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Ruby on Rails (5!)
 
-Things you may want to cover:
+* Sqlite3
 
-* Ruby version
+* Vanilla CoffeeScript (yum)
 
-* System dependencies
+* Sass, Bourbon, Neat, Bitters
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* it even has an admin
